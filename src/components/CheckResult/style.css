@@ -1,0 +1,13 @@
+.check {
+    padding: 0 50px;
+    background-color: rgb(233, 233, 233);
+    color: black;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.check:hover {
+    background-color: rgb(233, 233, 233);
+    opacity: 0.9;
+}
