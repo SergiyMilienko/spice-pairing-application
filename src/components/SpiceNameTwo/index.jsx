@@ -1,8 +1,8 @@
 import React from 'react'
 
-const SpiceNameTwo = () => {
+const SpiceNameTwo = ( { name }) => {
   return (
-    <p>Turmeric</p>
+    <p>{name}</p>
   )
 }
 

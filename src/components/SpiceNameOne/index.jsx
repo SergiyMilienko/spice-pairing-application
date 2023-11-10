@@ -1,8 +1,11 @@
 import React from 'react'
 import './style.css'
-const SpiceNameOne = () => {
+
+const SpiceNameOne = ( { name }) => {
+  console.log('SpiceNameOne - Received name:', name);
+  
   return (
-    <p>Clove</p>
+    <p>{name}</p>
   )
 }
 

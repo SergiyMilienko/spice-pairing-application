@@ -4,12 +4,19 @@ img {
 
 .image-box {
     height: 120px;
+    padding: 20px;
+    margin-bottom: -20px;
 }
 
 .spice {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column; /* Change to column */
 }
 
 button {
