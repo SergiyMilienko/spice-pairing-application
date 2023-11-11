@@ -5,7 +5,6 @@ img {
 .image-box {
     height: 120px;
     padding: 20px;
-    margin-bottom: -20px;
 }
 
 .spice {
@@ -16,7 +15,7 @@ img {
 
 .content-container {
     display: flex;
-    flex-direction: column; /* Change to column */
+    flex-direction: column;
 }
 
 button {
