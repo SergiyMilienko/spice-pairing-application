@@ -2,16 +2,32 @@ import React, { useState } from 'react'
 import './style.css'
 import spicesData from '../../data/spicesData'
 
-const SpiceOne = () => {
+const SpiceOne = ( { selectedSpiceIndexTwo, onSelectSpice }) => {
 
-  const [currentSpiceIndex1, setCurrentSpiceIndex1] = useState(0);
+  const [currentSpiceIndexOne, setCurrentSpiceIndexOne] = useState(0);
 
   const switchSpicesRight = () => {
-    setCurrentSpiceIndex1((prevIndex) => (prevIndex + 1) % spicesData.length);
+    let nextIndex = (currentSpiceIndexOne + 1) % spicesData.length;
+    if (nextIndex !== selectedSpiceIndexTwo) {
+      onSelectSpice(nextIndex)
+      setCurrentSpiceIndexOne(nextIndex);
+    } else {
+      nextIndex = (currentSpiceIndexOne + 2) % spicesData.length;
+      onSelectSpice(nextIndex)
+      setCurrentSpiceIndexOne(nextIndex);
+    }
   }
 
   const switchSpicesLeft = () => {
-    setCurrentSpiceIndex1((prevIndex) => (prevIndex - 1 + spicesData.length) % spicesData.length);
+    let nextIndex = (currentSpiceIndexOne - 1 + spicesData.length) % spicesData.length;
+    if (nextIndex !== selectedSpiceIndexTwo) {
+      onSelectSpice(nextIndex)
+      setCurrentSpiceIndexOne(nextIndex);
+    } else {
+      nextIndex = (currentSpiceIndexOne - 2 + spicesData.length) % spicesData.length;
+      onSelectSpice(nextIndex)
+      setCurrentSpiceIndexOne(nextIndex);
+    }
   }
 
   return (
@@ -21,10 +37,10 @@ const SpiceOne = () => {
       </button>
       <div className="content-container">
         <div className="image-box">
-          <img src={spicesData[currentSpiceIndex1].image} alt={spicesData[currentSpiceIndex1].name} />
+          <img src={spicesData[currentSpiceIndexOne].image} alt={spicesData[currentSpiceIndexOne].name} />
         </div>
         <div className="spice-name">
-          {spicesData[currentSpiceIndex1].name}
+          {spicesData[currentSpiceIndexOne].name}
         </div>
       </div>
       <button onClick={switchSpicesRight} className="right-arrow">
