@@ -1,10 +1,10 @@
 import React from 'react'
 import './style.css'
 
-const CheckResult = () => {
+const CheckResult = ({ onClick }) => {
 
   return (
-    <button className="check">
+    <button onClick={onClick} className="check">
         Check
     </button>
   )
