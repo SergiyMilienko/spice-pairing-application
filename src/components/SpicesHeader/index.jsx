@@ -5,7 +5,7 @@ import SpiceOne from '../SpiceOne'
 import CheckResult from '../CheckResult'
 import Result from '../Result'
 import spicesData from '../../data/spicesData'
-import { goodPairings, badPairings } from '../../data/pairingsData';
+import { goodPairings, neutralPairings, badPairings } from '../../data/pairingsData';
 
 const SpicesHeader = () => {
 
@@ -33,6 +33,11 @@ const SpicesHeader = () => {
       (pair[0] === spiceOneName && pair[1] === spiceTwoName) ||
       (pair[0] === spiceTwoName && pair[1] === spiceOneName)
     );
+    
+    const isNeutralPairing = neutralPairings.some(pair =>
+      (pair[0] === spiceOneName && pair[1] === spiceTwoName) ||
+      (pair[0] === spiceTwoName && pair[1] === spiceOneName)
+      );
 
     const isBadPairing = badPairings.some(pair =>
       (pair[0] === spiceOneName && pair[1] === spiceTwoName) ||
@@ -43,8 +48,10 @@ const SpicesHeader = () => {
         setPairingResult("Good Pairing")
       } else if (isBadPairing) {
         setPairingResult("Bad Pairing");
-      } else {
+      } else if (isNeutralPairing) {
         setPairingResult("Neutral Pairing");
+      } else {
+        setPairingResult("Uknown pairing");
       }
   }
 
