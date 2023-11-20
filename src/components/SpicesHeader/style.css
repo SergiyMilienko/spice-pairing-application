@@ -17,3 +17,9 @@ main {
     min-height: 100vh;
     justify-content: center;
 }
+
+@media (max-width: 620px) {
+    .header {
+        flex-wrap: wrap;
+    }
+}

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 import "./style.css"
 
@@ -11,13 +12,13 @@ const Navbar = () => {
                 </a>
                 <ul className="nav-list">
                     <li className="nav-list__item">
-                        <a href="#" className="nav-list__link">Spice Guide</a>
+                        <a href="#spice-guide " className="nav-list__link">Spice Guide</a>
                     </li>
                     <li className="nav-list__item">
-                        <a href="#" className="nav-list__link">FAQs</a>
+                        <a href="#faqs" className="nav-list__link">FAQs</a>
                     </li>
                     <li className="nav-list__item">
-                        <a href="#" className="nav-list__link">Language</a>
+                        <a href="#language" className="nav-list__link">Language</a>
                     </li>
                 </ul>
             </div>

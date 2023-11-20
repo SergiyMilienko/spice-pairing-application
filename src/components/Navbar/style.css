@@ -49,3 +49,12 @@ strong {
 .nav-list__link:hover {
     color: tomato;
 }
+
+@media (max-width: 620px) {
+    .logo {
+        font-size: 16px;
+    }
+    .nav-list {
+        font-size: 10px;
+    }
+}
