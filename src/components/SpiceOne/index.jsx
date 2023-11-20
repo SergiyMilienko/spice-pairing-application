@@ -40,7 +40,10 @@ const SpiceOne = ( { selectedSpiceIndexTwo, onSelectSpice }) => {
           <img src={spicesData[currentSpiceIndexOne].image} alt={spicesData[currentSpiceIndexOne].name} />
         </div>
         <div className="spice-name">
-          {spicesData[currentSpiceIndexOne].name}
+          <span>{spicesData[currentSpiceIndexOne].name}</span>
+          <button onClick={switchSpicesRight} itemID="bottom-arrow">
+            <img className="choose" src="./img/right-arrow.svg" alt=""/>
+          </button>
         </div>
       </div>
       <button onClick={switchSpicesRight} className="right-arrow">

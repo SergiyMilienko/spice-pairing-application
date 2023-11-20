@@ -26,6 +26,7 @@ button {
     justify-content: center;
     align-items: center;
     border: none;
+    cursor: pointer;
 }
 
 button:hover {
@@ -36,4 +37,31 @@ button:hover {
 button img {
     width: 30px;
     height: 30px;
+}
+
+.spice-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: #262923 1px solid;
+    border-radius: 5px;
+    flex-grow: 1;
+    position: relative;
+}
+
+.spice-name button {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 5px;
+}
+
+.spice-name span {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.choose {
+    transform: rotate(90deg);
+    height: 20px;
 }
