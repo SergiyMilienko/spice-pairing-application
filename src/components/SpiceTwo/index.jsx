@@ -5,6 +5,7 @@ import spicesData from '../../data/spicesData'
 const SpiceTwo = ( { selectedSpiceIndexOne, onSelectSpice }) => {
   
   const [currentSpiceIndexTwo, setCurrentSpiceIndexTwo] = useState(1);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const switchSpicesRight = () => {
     let nextIndex = (currentSpiceIndexTwo + 1) % spicesData.length;
@@ -28,8 +29,11 @@ const SpiceTwo = ( { selectedSpiceIndexOne, onSelectSpice }) => {
       onSelectSpice(nextIndex)
       setCurrentSpiceIndexTwo(nextIndex);
     }
-    
   }
+
+  const handleDropdownToggle = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
 
   return (
     <div class="spice">
@@ -42,10 +46,19 @@ const SpiceTwo = ( { selectedSpiceIndexOne, onSelectSpice }) => {
         </div>
         <div className="spice-name">
           <span>{spicesData[currentSpiceIndexTwo].name}</span>
-          <button onClick={switchSpicesRight} itemID="bottom-arrow">
+          <button onClick={handleDropdownToggle} itemID="bottom-arrow">
             <img className="choose" src="./img/right-arrow.svg" alt=""/>
           </button>
         </div>
+        {isDropdownOpen && (
+          <div className="dropdown-menu">
+            {spicesData.map((spice, index) => (
+              <p key={index} onClick={() => onSelectSpice(index)}>
+                {spice.name}
+              </p>
+            ))}
+          </div>
+        )}
       </div>
       <button onClick={switchSpicesRight} className="right-arrow">
         <img src="./img/right-arrow.svg" alt=""/>
