@@ -3,22 +3,9 @@
     color: white;
     font-size: 25px;
     font-weight: 700;
-    transition: color 0.3s ease;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: transform 1s ease;
 }
 
-.good-pairing {
-  color: rgba(0, 128, 0, 0.777);
-  opacity: 1;
-}
-
-.neutral-pairing {
-  color: rgba(255, 166, 0, 0.777);
-  opacity: 1;
-}
-
-.bad-pairing {
-  color: rgba(255, 0, 0, 0.777);
-  opacity: 1;
+.transform {
+    transform: scale(1.2);
 }

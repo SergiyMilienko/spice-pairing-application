@@ -1,25 +1,35 @@
-import React from 'react'
-import "./style.css"
+import React, { useState, useEffect } from 'react';
+import "./style.css";
 
-const Result = ({ pairingResult }) => {
-    
-    const determineClass = () => {
-      switch (pairingResult) {
-        case 'Good Pairing':
-          return 'good-pairing';
-        case 'Neutral Pairing':
-          return 'neutral-pairing';
-        case 'Bad Pairing':
-            return 'bad-pairing';
-        default:
-          return 'result'
-      }}
+const Result = ({ pairingResult, selectedSpiceIndexOne, selectedSpiceIndexTwo }) => {
+    const [className, setClassName] = useState('');
 
-  return (
-    <div className={`result ${determineClass()}`}>
-        {pairingResult}
-    </div>
-  )
-}
+    const WordColor = () => {
+        switch (pairingResult) {
+            case 'Good':
+                return 'green';
+            case 'Neutral':
+                return 'orange';
+            case 'Bad':
+                return 'red';
+            default:
+                return 'white';
+        }
+  };
 
-export default Result
+    useEffect(() => {
+        setClassName('transform');
+        const timeout = setTimeout(() => {
+            setClassName('');
+        }, 500);
+        return () => clearTimeout(timeout);
+    }, [selectedSpiceIndexOne, selectedSpiceIndexTwo]);
+
+    return (
+        <div className={`result ${className}`}>
+            <span style={{ color: WordColor() }}>{pairingResult}</span> Pairing
+        </div>
+    );
+};
+
+export default Result;

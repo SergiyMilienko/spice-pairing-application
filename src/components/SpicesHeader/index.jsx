@@ -1,8 +1,7 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import "./style.css"
 import SpiceTwo from '../SpiceTwo'
 import SpiceOne from '../SpiceOne'
-import CheckResult from '../CheckResult'
 import Result from '../Result'
 import spicesData from '../../data/spicesData'
 import { goodPairings, neutralPairings, badPairings } from '../../data/pairingsData';
@@ -45,15 +44,19 @@ const SpicesHeader = () => {
       );
 
       if (isGoodPairing) {
-        setPairingResult("Good Pairing")
+        setPairingResult("Good")
       } else if (isBadPairing) {
-        setPairingResult("Bad Pairing");
+        setPairingResult("Bad");
       } else if (isNeutralPairing) {
-        setPairingResult("Neutral Pairing");
+        setPairingResult("Neutral");
       } else {
-        setPairingResult("Uknown pairing");
+        setPairingResult("Uknown");
       }
   }
+
+  useEffect(() => {
+    checkPairing();
+  }, [selectedSpiceIndexOne, selectedSpiceIndexTwo])
 
   return (
     <main>
@@ -65,8 +68,7 @@ const SpicesHeader = () => {
             <SpiceTwo selectedSpiceIndexOne={selectedSpiceIndexOne} onSelectSpice={handleSelectSpiceTwo}/>
         </div>
         </div>
-        <CheckResult onClick={checkPairing}/>
-        <Result pairingResult={pairingResult}/>
+        <Result pairingResult={pairingResult} selectedSpiceIndexOne={selectedSpiceIndexOne} selectedSpiceIndexTwo={selectedSpiceIndexTwo}/>
     </main>
   )
 }

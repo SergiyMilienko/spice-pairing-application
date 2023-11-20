@@ -1,5 +1,4 @@
 import './App.css';
-import CheckResult from './components/CheckResult';
 import Navbar from './components/Navbar';
 import SpicesHeader from './components/SpicesHeader';
 
