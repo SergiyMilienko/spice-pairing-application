@@ -24,37 +24,38 @@ const SpicesHeader = () => {
     }
   };
 
-  const checkPairing = () => {
-    const spiceOneName = spicesData[selectedSpiceIndexOne].name;
-    const spiceTwoName = spicesData[selectedSpiceIndexTwo].name;
-
-    const isGoodPairing = goodPairings.some(pair =>
-      (pair[0] === spiceOneName && pair[1] === spiceTwoName) ||
-      (pair[0] === spiceTwoName && pair[1] === spiceOneName)
-    );
-    
-    const isNeutralPairing = neutralPairings.some(pair =>
-      (pair[0] === spiceOneName && pair[1] === spiceTwoName) ||
-      (pair[0] === spiceTwoName && pair[1] === spiceOneName)
-      );
-
-    const isBadPairing = badPairings.some(pair =>
-      (pair[0] === spiceOneName && pair[1] === spiceTwoName) ||
-      (pair[0] === spiceTwoName && pair[1] === spiceOneName)
-      );
-
-      if (isGoodPairing) {
-        setPairingResult("Good")
-      } else if (isBadPairing) {
-        setPairingResult("Bad");
-      } else if (isNeutralPairing) {
-        setPairingResult("Neutral");
-      } else {
-        setPairingResult("Uknown");
-      }
-  }
+  
 
   useEffect(() => {
+    const checkPairing = () => {
+      const spiceOneName = spicesData[selectedSpiceIndexOne].name;
+      const spiceTwoName = spicesData[selectedSpiceIndexTwo].name;
+  
+      const isGoodPairing = goodPairings.some(pair =>
+        (pair[0] === spiceOneName && pair[1] === spiceTwoName) ||
+        (pair[0] === spiceTwoName && pair[1] === spiceOneName)
+      );
+      
+      const isNeutralPairing = neutralPairings.some(pair =>
+        (pair[0] === spiceOneName && pair[1] === spiceTwoName) ||
+        (pair[0] === spiceTwoName && pair[1] === spiceOneName)
+        );
+  
+      const isBadPairing = badPairings.some(pair =>
+        (pair[0] === spiceOneName && pair[1] === spiceTwoName) ||
+        (pair[0] === spiceTwoName && pair[1] === spiceOneName)
+        );
+  
+        if (isGoodPairing) {
+          setPairingResult("Good")
+        } else if (isBadPairing) {
+          setPairingResult("Bad");
+        } else if (isNeutralPairing) {
+          setPairingResult("Neutral");
+        } else {
+          setPairingResult("Uknown");
+        }
+    }
     checkPairing();
   }, [selectedSpiceIndexOne, selectedSpiceIndexTwo])
 
