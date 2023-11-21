@@ -116,5 +116,5 @@ position: absolute;
   }
   
   .left-arrow {
-    transform: rotate(0deg); 
+    transform: rotate(-90deg); 
   }

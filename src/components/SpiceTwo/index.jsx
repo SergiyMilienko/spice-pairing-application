@@ -44,7 +44,7 @@ const SpiceTwo = ( { selectedSpiceIndexOne, onSelectSpice }) => {
   return (
     <div className="spice">
       <button onClick={switchSpicesLeft} className="left-arrow">
-        <img src="./img/left-arrow.svg" alt=""/>
+        <img className="left-arrow" src="./img/right-arrow.svg" alt=""/>
       </button>
       <div className="content-container">
         <div className="image-box">
