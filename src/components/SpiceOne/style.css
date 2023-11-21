@@ -115,4 +115,6 @@ position: absolute;
     background-color: #ffffff;
   }
   
-  
+  .left-arrow {
+    transform: rotate(0deg); 
+  }
