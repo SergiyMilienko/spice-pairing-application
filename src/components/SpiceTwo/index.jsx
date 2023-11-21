@@ -25,7 +25,7 @@ const SpiceTwo = ( { selectedSpiceIndexOne, onSelectSpice }) => {
       onSelectSpice(nextIndex)
       setCurrentSpiceIndexTwo(nextIndex)
     } else {
-      nextIndex = (currentSpiceIndexTwo - 2) % spicesData.length;
+      nextIndex = (currentSpiceIndexTwo - 2 + spicesData.length) % spicesData.length;
       onSelectSpice(nextIndex)
       setCurrentSpiceIndexTwo(nextIndex);
     }
