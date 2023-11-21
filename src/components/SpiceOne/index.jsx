@@ -35,8 +35,15 @@ const SpiceOne = ( { selectedSpiceIndexTwo, onSelectSpice }) => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
+  const handleDropdownItemClick = (index) => {
+    onSelectSpice(index);
+    setCurrentSpiceIndexOne(index);
+    handleDropdownToggle();
+  }
+
+
   return (
-    <div class="spice">
+    <div className="spice">
       <button onClick={switchSpicesLeft} className="left-arrow">
         <img src="./img/left-arrow.svg" alt=""/>
       </button>
@@ -51,13 +58,13 @@ const SpiceOne = ( { selectedSpiceIndexTwo, onSelectSpice }) => {
           </button>
         </div>
         {isDropdownOpen && (
-          <div className="dropdown-menu">
+          <ul className="dropdown-menu">
             {spicesData.map((spice, index) => (
-              <p key={index} onClick={() => onSelectSpice(index)}>
+              <li key={index} onClick={() => handleDropdownItemClick(index)}>
                 {spice.name}
-              </p>
+              </li>
             ))}
-          </div>
+          </ul>
         )}
       </div>
       <button onClick={switchSpicesRight} className="right-arrow">

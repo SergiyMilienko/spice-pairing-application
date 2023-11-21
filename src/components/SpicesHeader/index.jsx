@@ -61,7 +61,7 @@ const SpicesHeader = () => {
 
   return (
     <main>
-        <div class="header">
+        <div className="header">
         <div className="spice-box">
             <SpiceOne selectedSpiceIndexTwo={selectedSpiceIndexTwo} onSelectSpice={handleSelectSpiceOne}/>
         </div>
