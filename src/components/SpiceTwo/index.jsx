@@ -58,7 +58,9 @@ const SpiceTwo = ( { selectedSpiceIndexOne, onSelectSpice }) => {
         </div>
         {isDropdownOpen && (
           <ul className="dropdown-menu">
-            {spicesData.map((spice, index) => (
+            {spicesData
+            .filter((spice, index) => index !== currentSpiceIndexTwo && index !== selectedSpiceIndexOne)
+            .map((spice, index) => (
               <li key={index} onClick={() => handleDropdownItemClick(index)}>
                 {spice.name}
               </li>
