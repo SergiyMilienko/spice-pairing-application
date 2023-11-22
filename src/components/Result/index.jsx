@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import "./style.css";
+import { useTranslation } from 'react-i18next';
 
 const Result = ({ pairingResult, selectedSpiceIndexOne, selectedSpiceIndexTwo }) => {
     const [className, setClassName] = useState('');
+    const { t } = useTranslation();
 
     const WordColor = () => {
         switch (pairingResult) {
@@ -27,7 +29,7 @@ const Result = ({ pairingResult, selectedSpiceIndexOne, selectedSpiceIndexTwo })
 
     return (
         <div className={`result ${className}`}>
-            <span style={{ color: WordColor() }}>{pairingResult}</span> Pairing
+            <span style={{ color: WordColor() }}>{t(`${pairingResult.toLowerCase()}`)}</span> {t('pairing')}
         </div>
     );
 };

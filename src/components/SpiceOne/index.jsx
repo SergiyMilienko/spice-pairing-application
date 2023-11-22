@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import './style.css'
 import spicesData from '../../data/spicesData'
+import { useTranslation } from 'react-i18next';
 
 const SpiceOne = ( { selectedSpiceIndexTwo, onSelectSpice }) => {
 
   const [currentSpiceIndexOne, setCurrentSpiceIndexOne] = useState(0);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const { t } = useTranslation();
 
   const switchSpicesRight = () => {
     let nextIndex = (currentSpiceIndexOne + 1) % spicesData.length;
@@ -44,7 +46,7 @@ const SpiceOne = ( { selectedSpiceIndexTwo, onSelectSpice }) => {
           <img src={spicesData[currentSpiceIndexOne].image} alt={spicesData[currentSpiceIndexOne].name} />
         </div>
         <div className="spice-name">
-          <span>{spicesData[currentSpiceIndexOne].name}</span>
+          <span>{t(`spices.${spicesData[currentSpiceIndexOne].name.toLowerCase()}`)}</span>
           <button onClick={handleDropdownToggle} id="bottom-arrow">
             <img className="choose" src="./img/right-arrow.svg" alt=""/>
           </button>
@@ -55,7 +57,7 @@ const SpiceOne = ( { selectedSpiceIndexTwo, onSelectSpice }) => {
             .filter((spice, id) => id !== currentSpiceIndexOne && id !== selectedSpiceIndexTwo)
             .map((spice) => (
               <li key={spice.id} onClick={() => handleDropdownItemClick(spice.id)}>
-                {spice.name}
+                {t(`spices.${spicesData[spice.id].name.toLowerCase()}`)}
               </li>
             ))}
           </ul>
