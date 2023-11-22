@@ -26,7 +26,11 @@ const Result = ({ pairingResult, selectedSpiceIndexOne, selectedSpiceIndexTwo })
         }, 500);
         return () => clearTimeout(timeout);
     }, [selectedSpiceIndexOne, selectedSpiceIndexTwo]);
-
+    
+    if (pairingResult === null || pairingResult === undefined) {
+        return null; // or return some default content
+      }
+      
     return (
         <div className={`result ${className}`}>
             <span style={{ color: WordColor() }}>{t(`${pairingResult.toLowerCase()}`)}</span> {t('pairing')}
