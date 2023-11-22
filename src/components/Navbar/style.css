@@ -43,11 +43,31 @@ strong {
 .nav-list__link {
     color: white;
     text-decoration: none;
-    transition: color 0.1s ease-in;
+    transition: opacity 0.1s ease-in;
 }
 
 .nav-list__link:hover {
-    color: tomato;
+    opacity: 0.8;
+}
+
+.nav-list__item {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.nav-list__item button {
+    margin-left: 5px;
+    width: 10px;
+    height: 10px;
+}
+
+.nav-list__item button img {
+    width: 10px;
+    height: 10px;
 }
 
 @media (max-width: 620px) {

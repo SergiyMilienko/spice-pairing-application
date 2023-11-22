@@ -9,35 +9,29 @@ const SpiceTwo = ( { selectedSpiceIndexOne, onSelectSpice }) => {
 
   const switchSpicesRight = () => {
     let nextIndex = (currentSpiceIndexTwo + 1) % spicesData.length;
-    if (nextIndex !== selectedSpiceIndexOne) {
+    while (nextIndex === selectedSpiceIndexOne) {
+      nextIndex = (nextIndex + 1) % spicesData.length;
+    }
       onSelectSpice(nextIndex)
       setCurrentSpiceIndexTwo(nextIndex)
-    } else {
-      nextIndex = (currentSpiceIndexTwo + 2) % spicesData.length;
-      onSelectSpice(nextIndex)
-      setCurrentSpiceIndexTwo(nextIndex);
-    }
   }
 
   const switchSpicesLeft = () => {
     let nextIndex = (currentSpiceIndexTwo - 1 + spicesData.length) % spicesData.length;
-    if (nextIndex !== selectedSpiceIndexOne) {
+      while (nextIndex === selectedSpiceIndexOne) {
+        nextIndex = (nextIndex - 1 + spicesData.length) % spicesData.length;
+      }
       onSelectSpice(nextIndex)
       setCurrentSpiceIndexTwo(nextIndex)
-    } else {
-      nextIndex = (currentSpiceIndexTwo - 2 + spicesData.length) % spicesData.length;
-      onSelectSpice(nextIndex)
-      setCurrentSpiceIndexTwo(nextIndex);
     }
-  }
 
   const handleDropdownToggle = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
-  const handleDropdownItemClick = (index) => {
-    onSelectSpice(index);
-    setCurrentSpiceIndexTwo(index);
+  const handleDropdownItemClick = (id) => {
+    onSelectSpice(id);
+    setCurrentSpiceIndexTwo(id);
     handleDropdownToggle();
   }
 
@@ -52,16 +46,16 @@ const SpiceTwo = ( { selectedSpiceIndexOne, onSelectSpice }) => {
         </div>
         <div className="spice-name">
           <span>{spicesData[currentSpiceIndexTwo].name}</span>
-          <button onClick={handleDropdownToggle} itemID="bottom-arrow">
+          <button onClick={handleDropdownToggle} id="bottom-arrow">
             <img className="choose" src="./img/right-arrow.svg" alt=""/>
           </button>
         </div>
         {isDropdownOpen && (
           <ul className="dropdown-menu">
             {spicesData
-            .filter((spice, index) => index !== currentSpiceIndexTwo && index !== selectedSpiceIndexOne)
-            .map((spice, index) => (
-              <li key={index} onClick={() => handleDropdownItemClick(index)}>
+            .filter((spice, id) => id !== currentSpiceIndexTwo && id !== selectedSpiceIndexOne)
+            .map((spice) => (
+              <li key={spice.id} onClick={() => handleDropdownItemClick(spice.id)}>
                 {spice.name}
               </li>
             ))}

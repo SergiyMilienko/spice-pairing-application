@@ -76,7 +76,7 @@ position: absolute;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
   border-radius: 5px;
   overflow-y: auto;
-  max-height: 200px;
+  max-height: 160px;
   z-index: 1; 
   scrollbar-width: thin;
   scrollbar-color: #3498db #f0f0f0;

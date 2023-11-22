@@ -7,7 +7,7 @@ const Navbar = () => {
     <nav className="nav">
         <div className="container">
             <div className="nav-row">
-                <a href="#" className="logo">
+                <a href="# " className="logo">
                     <strong>Spice</strong>Pairing
                 </a>
                 <ul className="nav-list">
@@ -19,6 +19,9 @@ const Navbar = () => {
                     </li>
                     <li className="nav-list__item">
                         <a href="#language" className="nav-list__link">Language</a>
+                        <button itemID="bottom-arrow">
+                            <img className="choose" src="./img/right-arrow.svg" alt=""/>
+                        </button>
                     </li>
                 </ul>
             </div>
