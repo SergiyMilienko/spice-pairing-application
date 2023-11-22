@@ -12,9 +12,6 @@ const Navbar = () => {
                 </a>
                 <ul className="nav-list">
                     <li className="nav-list__item">
-                        <a href="#spice-guide " className="nav-list__link">Spice Guide</a>
-                    </li>
-                    <li className="nav-list__item">
                         <a href="#faqs" className="nav-list__link">FAQs</a>
                     </li>
                     <li className="nav-list__item">
