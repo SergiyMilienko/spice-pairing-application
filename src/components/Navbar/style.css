@@ -51,12 +51,17 @@ strong {
 }
 
 .nav-list__item {
+    position: relative;
     display: flex;
     align-items: center;
     justify-self: center;
     padding: 5px;
     border-radius: 10px;
     cursor: pointer;
+}
+
+.nav-list__item:hover {
+    background-color:#202023;
 }
 
 .nav-list__item button {
@@ -77,4 +82,14 @@ strong {
     .nav-list {
         font-size: 10px;
     }
+}
+
+.dropdown-menu li {
+    font-size: 12px;
+}
+
+.dropdown-menu img {
+    width: 15px;
+    height: 10px;
+    margin-right: 5px;
 }
