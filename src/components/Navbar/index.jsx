@@ -28,7 +28,7 @@ const Navbar = () => {
                     <li className="nav-list__item">
                         <a href="#faqs" className="nav-list__link">{t('nav.questions')}</a>
                     </li>
-                    <li className="nav-list__item" onClick={handleDropdownToggle}>
+                    <li className="nav-list__item drop" onClick={handleDropdownToggle}>
                         <a href="#language" className="nav-list__link">{t('nav.language')}</a>
                         <button itemID="bottom-arrow">
                             <img className="choose" src="./img/right-arrow.svg" alt=""/>

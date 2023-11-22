@@ -11,7 +11,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    column-gap: 40px;
+    column-gap: 10px;
     row-gap: 20px;
     flex-wrap: wrap;
 }
@@ -33,10 +33,9 @@ strong {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    column-gap: 20px;
+    column-gap: 15px;
     font-size: 16px;
     font-weight: 500;
-    row-gap: 10px;
     list-style: none;
 }
 
@@ -53,12 +52,17 @@ strong {
 .nav-list__item {
     position: relative;
     display: flex;
+    justify-content: center;
     align-items: center;
     justify-self: center;
-    padding: 5px;
+    padding: 5px 0px;
     border-radius: 10px;
     cursor: pointer;
-    padding: 3px 25px;
+    padding: 5px 10px;
+}
+
+.drop {
+    width: 80px;
 }
 
 .nav-list__item:hover {
