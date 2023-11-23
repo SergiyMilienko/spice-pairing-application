@@ -2,11 +2,11 @@
   border: 1px solid #262923;
   margin-bottom: 8px;
   overflow: hidden;
-  transition: height 0.3s;
   border-radius: 10px;
   color: rgba(255, 255, 255, 0.94);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 80%;
+  cursor: pointer;
 }
 
 .accordion-header {
@@ -21,6 +21,7 @@
 .accordion-header:hover {
     opacity: 0.8;
 }
+
 .accordion-header h2 {
   margin: 0;
   font-size: 18px;
@@ -30,6 +31,15 @@
 .accordion-content {
   padding: 15px;
   background-color: rgba(41, 40, 40, 0.796);
+}
+
+.accordion-item .icon {
+    transform: rotate(0deg);
+    transition: transform 0.3s ease-out;
+}
+  
+.accordion-item.open .icon {
+    transform: rotate(180deg);
 }
 
 @media (max-width: 768px) {
