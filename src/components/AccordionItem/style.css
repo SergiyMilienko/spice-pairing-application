@@ -34,10 +34,10 @@
 
 @media (max-width: 768px) {
     .accordion-header h2 {
-      font-size: 10px;
+      font-size: 14px;
     }
 
     .accordion-content {
-        font-size: 7px;
+        font-size: 11px;
     }
   }
