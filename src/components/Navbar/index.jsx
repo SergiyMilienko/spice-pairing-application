@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, {useState} from 'react'
+import { Link } from 'react-router-dom';
 import "./style.css"
 import { useTranslation } from 'react-i18next';
 
@@ -21,15 +22,15 @@ const Navbar = () => {
     <nav className="nav">
         <div className="container">
             <div className="nav-row">
-                <a href="/" className="logo">
+                <Link to="/" className="logo">
                     <strong>{t('nav.spice')}</strong>{t('nav.pairing')}
-                </a>
+                </Link>
                 <ul className="nav-list">
                     <li className="nav-list__item">
-                        <a href="/questions" className="nav-list__link">{t('nav.questions')}</a>
+                        <Link to="/questions" className="nav-list__link">{t('nav.questions')}</Link>
                     </li>
                     <li className="nav-list__item drop" onClick={handleDropdownToggle}>
-                        <a href="#language" className="nav-list__link">{t('nav.language')}</a>
+                        <div className="nav-list__link">{t('nav.language')}</div>
                         <button itemID="bottom-arrow">
                             <img className="choose" src="./img/right-arrow.svg" alt=""/>
                         </button>
