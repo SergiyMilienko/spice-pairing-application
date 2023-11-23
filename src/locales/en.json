@@ -35,6 +35,22 @@
         "poppy seeds": "Poppy Seeds",
         "tarragon": "Tarragon"
     },
+    "questions": {
+        "question-1": "How does the spice pairing feature work?",
+        "question-2": "Can I customize or input my own spices?",
+        "question-3": "What are the criteria for determining good, bad, or neutral spice pairings?",
+        "question-4": "Is the spice pairing based on specific cuisines or dishes?",
+        "question-5": "Is the app available in multiple languages?",
+        "question-6": "Do you have nutritional information for the spices?"
+    },
+    "answers": {
+        "answer-1": "Our spice pairing feature analyzes flavor profiles, aromas, and traditional pairings to recommend complementary spices for your dishes.",
+        "answer-2": "Currently, our app doesn't support custom spices. However, we're exploring this feature for future updates.",
+        "answer-3": "Pairings are based on flavor affinities, regional traditions, and culinary expertise, ensuring a balanced and delicious combination.",
+        "answer-4": "Yes, our spice pairing considers the characteristics of various cuisines and provides tailored recommendations for specific dishes.",
+        "answer-5": "Yes, our app supports multiple languages. You can easily switch between languages in the settings.",
+        "answer-6": "Currently, our app focuses on flavor pairing. Nutritional information may be considered for future updates."
+    },
     "good":"Good",
     "neutral":"Neutral",
     "bad":"Bad",
