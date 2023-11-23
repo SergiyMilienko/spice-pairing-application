@@ -31,6 +31,10 @@
 .accordion-content {
   padding: 15px;
   background-color: rgba(41, 40, 40, 0.796);
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .accordion-item .icon {

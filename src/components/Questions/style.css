@@ -9,6 +9,10 @@
     margin: 0 auto;
 }
 
+.accordion.shift {
+    padding-top: 30px;
+}
+
 @media (max-width: 768px) {
   .accordion {
     width: 90%;

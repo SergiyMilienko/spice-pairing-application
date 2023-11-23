@@ -20,7 +20,7 @@ const Questions = () => {
   };
 
   return (
-    <div className="accordion">
+    <div className={`accordion ${openItemIndex !== null ? 'shift' : ''}`}>
       {accordionData.map((item, index) => (
         <AccordionItem
           key={index}
