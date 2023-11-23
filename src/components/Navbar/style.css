@@ -82,11 +82,17 @@ strong {
 
 @media (max-width: 620px) {
     .logo {
-        font-size: 16px;
+        font-size: 12px;
     }
     .nav-list {
         font-size: 10px;
+        column-gap: 5px;
     }
+
+    .nav-list__item button {
+        margin-left: 0px;
+    }
+    
 }
 
 .dropdown-menu li {
