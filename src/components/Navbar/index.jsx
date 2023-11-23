@@ -21,12 +21,12 @@ const Navbar = () => {
     <nav className="nav">
         <div className="container">
             <div className="nav-row">
-                <a href="# " className="logo">
+                <a href="/" className="logo">
                     <strong>{t('nav.spice')}</strong>{t('nav.pairing')}
                 </a>
                 <ul className="nav-list">
                     <li className="nav-list__item">
-                        <a href="#faqs" className="nav-list__link">{t('nav.questions')}</a>
+                        <a href="/questions" className="nav-list__link">{t('nav.questions')}</a>
                     </li>
                     <li className="nav-list__item drop" onClick={handleDropdownToggle}>
                         <a href="#language" className="nav-list__link">{t('nav.language')}</a>
