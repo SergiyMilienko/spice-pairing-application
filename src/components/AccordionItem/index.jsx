@@ -1,16 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './style.css'
 
-const AccordionItem = ({ title, content }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleAccordion = () => {
-    setIsOpen(!isOpen);
-  };
+const AccordionItem = ({ title, content, isOpen, onToggle }) => {
 
   return (
     <div className="accordion-item">
-      <div className="accordion-header" onClick={toggleAccordion}>
+      <div className="accordion-header" onClick={onToggle}>
         <h2>{title}</h2>
         <span>{isOpen ? '▲' : '▼'}</span>
       </div>
